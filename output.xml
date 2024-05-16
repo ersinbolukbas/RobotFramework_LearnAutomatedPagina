@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-05-15T13:00:34.231092" rpa="false" schemaversion="5">
+<suite id="s1" name="BlogPaginaTests" source="c:\Developer\Project\RobotFramework_LearnPortaal\Tests\BlogPaginaTests.robot">
+<test id="s1-t1" name="Contoleer of filter TESTING" line="35">
+<kw name="Beginnen te testen" owner="Homepage" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-15T13:00:34.394707" level="INFO">Opening browser 'chrome' to base url 'https://staging.learnautomatedtesting.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-15T13:00:34.394707" elapsed="1.407431"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-15T13:00:35.803363" elapsed="0.281028"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-15T13:00:37.085138" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-15T13:00:36.084391" elapsed="1.000747"/>
+</kw>
+<status status="PASS" start="2024-05-15T13:00:34.394707" elapsed="2.694480"/>
+</kw>
+<kw name="Ga naar de BLOGPAGINA" owner="BlogPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-15T13:00:37.128835" level="INFO">Clicking element 'xpath://a[contains(text(),'Blog')]'.</msg>
+<arg>xpath://a[contains(text(),'Blog')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-15T13:00:37.116436" elapsed="1.578030"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-15T13:00:39.695967" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-15T13:00:38.695491" elapsed="1.000476"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-05-15T13:00:39.908645" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-05-15T13:00:39.697103" elapsed="0.211542"/>
+</kw>
+<status status="PASS" start="2024-05-15T13:00:37.101469" elapsed="2.807176"/>
+</kw>
+<kw name="Contoleer of filter TESTING" owner="BlogPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-15T13:00:39.908645" level="INFO">Clicking element 'xpath:(//p[@data-value='1'])[2]'.</msg>
+<arg>${TestingFilter}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-15T13:00:39.908645" elapsed="0.036492"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-15T13:00:40.446129" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-15T13:00:39.945647" elapsed="0.500482"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-15T13:00:40.446129" level="INFO">Clicking element 'css:li[data-id='testing-regression_test']'.</msg>
+<arg>${TestingFilter_Regressie}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-15T13:00:40.446129" elapsed="0.212308"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-15T13:00:41.158892" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-15T13:00:40.658437" elapsed="0.500455"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-05-15T13:00:41.378221" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-05-15T13:00:41.158892" elapsed="0.219329"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-05-15T13:00:41.388478" level="INFO">${element_count} = 2</msg>
+<var>${element_count}</var>
+<arg>xpath:/html/body/main/section[2]/div/div/div[3]/div</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-05-15T13:00:41.378221" elapsed="0.013294"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-15T13:00:41.391515" level="INFO">We hebben totaal in blog pagina : 2 onlinetraining</msg>
+<arg>We hebben totaal in blog pagina : ${element_count} onlinetraining</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-15T13:00:41.391515" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${element_count} == ${ExpectedArtikelRegressie}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Regression Test button doet het wel</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-15T13:00:41.392542" elapsed="0.000506"/>
+</kw>
+<status status="PASS" start="2024-05-15T13:00:41.392542" elapsed="0.000506"/>
+</branch>
+<branch type="ELSE IF" condition="${element_count} == ${ExpectedArtikelAantal}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Regression Test button doet het niet meer.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-05-15T13:00:41.393048" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-15T13:00:41.393048" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-05-15T13:00:41.392542" elapsed="0.000506"/>
+</if>
+<status status="PASS" start="2024-05-15T13:00:39.908645" elapsed="1.484403"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-15T13:00:42.393485" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-15T13:00:41.393048" elapsed="1.000437"/>
+</kw>
+<kw name="Beeindigen te Testen" owner="Homepage" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-15T13:00:42.394996" elapsed="3.724841"/>
+</kw>
+<status status="PASS" start="2024-05-15T13:00:42.393485" elapsed="3.726352"/>
+</kw>
+<status status="PASS" start="2024-05-15T13:00:34.394707" elapsed="11.725130"/>
+</test>
+<doc>LearnAutomated Website Blog pagina demo test</doc>
+<status status="PASS" start="2024-05-15T13:00:34.235986" elapsed="11.892480"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="BlogPaginaTests">BlogPaginaTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

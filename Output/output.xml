@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-05-15T10:12:19.465092" rpa="false" schemaversion="5">
+<suite id="s1" name="BlogPaginaTests" source="C:\Developer\Project\RobotFramework_LearnPortaal\Tests\BlogPaginaTests.robot">
+<test id="s1-t1" name="Ga naar de BLOGPAGINA en controleer de titel" line="16">
+<kw name="Beginnen te testen" owner="Homepage" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-15T10:12:19.696494" level="INFO">Opening browser 'chrome' to base url 'https://staging.learnautomatedtesting.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-15T10:12:19.696494" elapsed="2.367045"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-15T10:12:22.063539" elapsed="0.027277"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-15T10:12:23.091120" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-15T10:12:22.090816" elapsed="1.000304"/>
+</kw>
+<status status="PASS" start="2024-05-15T10:12:19.696494" elapsed="3.394626"/>
+</kw>
+<kw name="Ga naar de BLOGPAGINA en controleer de titel" owner="BlogPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-15T10:12:23.093587" level="INFO">Clicking element 'xpath://a[contains(text(),'Blog')]'.</msg>
+<arg>xpath://a[contains(text(),'Blog')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-15T10:12:23.093028" elapsed="0.492944"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-15T10:12:24.586843" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-15T10:12:23.585972" elapsed="1.000871"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-05-15T10:12:24.796754" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-05-15T10:12:24.586843" elapsed="0.209911"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2024-05-15T10:12:24.796754" level="INFO">${ActualBlogTitle} = Blog | Learn Automated Testing</msg>
+<var>${ActualBlogTitle}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-05-15T10:12:24.796754" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-15T10:12:24.796754" level="INFO">ActualTitel is : Blog | Learn Automated Testing</msg>
+<arg>ActualTitel is : ${ActualBlogTitle}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-15T10:12:24.796754" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${ActualBlogTitle}</arg>
+<arg>${ExpectedBlogTitle}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-05-15T10:12:24.796754" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-05-15T10:12:23.092482" elapsed="1.704272"/>
+</kw>
+<kw name="Tel hoeveel trainingen je hebt en de trainingen zijn zichtbaar" owner="BlogPage">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-05-15T10:12:24.898969" level="INFO">Element 'xpath:/html/body/main/section[2]/div/div/div[3]/div' is displayed.</msg>
+<arg>xpath:/html/body/main/section[2]/div/div/div[3]/div</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-15T10:12:24.796754" elapsed="0.102215"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-05-15T10:12:24.899967" level="INFO">${element_count} = 31</msg>
+<var>${element_count}</var>
+<arg>xpath:/html/body/main/section[2]/div/div/div[3]/div</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-05-15T10:12:24.898969" elapsed="0.000998"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-15T10:12:24.899967" level="INFO">We hebben totaal in blog pagina : 31 onlinetraining</msg>
+<arg>We hebben totaal in blog pagina : ${element_count} onlinetraining</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-15T10:12:24.899967" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${element_count} == ${ExpectedArtikelAantal}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Er zijn 31 onlinetrainingen</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-15T10:12:24.899967" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-05-15T10:12:24.899967" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Controleer je telling code</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-05-15T10:12:24.899967" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-15T10:12:24.899967" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-05-15T10:12:24.899967" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2024-05-15T10:12:24.796754" elapsed="0.103213"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-15T10:12:25.900422" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-15T10:12:24.899967" elapsed="1.000455"/>
+</kw>
+<kw name="Controleer of SearchBox actief is" owner="BlogPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-15T10:12:25.900422" level="INFO">Typing text 'Katalon' into text field 'css:input[placeholder=Search]'.</msg>
+<arg>${SearchBox}</arg>
+<arg>${SearchWord}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-15T10:12:25.900422" elapsed="0.081679"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-15T10:12:26.982716" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-15T10:12:25.982101" elapsed="1.000615"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-15T10:12:26.982716" level="INFO">Clicking element 'xpath://ol/li/div/p/a'.</msg>
+<arg>${SearchBox_firstResult}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-15T10:12:26.982716" elapsed="0.266388"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2024-05-15T10:12:27.251985" level="INFO">${ActualTitle} = Katalon icw CICD | Learn Automated Testing</msg>
+<var>${ActualTitle}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-05-15T10:12:27.250543" elapsed="0.001442"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${ActualTitle}</arg>
+<arg>${SearchWord}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-05-15T10:12:27.251985" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SearchBox werkt goed.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-15T10:12:27.251985" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-05-15T10:12:25.900422" elapsed="1.351563"/>
+</kw>
+<kw name="Beeindigen te Testen" owner="Homepage" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-15T10:12:27.256501" elapsed="2.160643"/>
+</kw>
+<status status="PASS" start="2024-05-15T10:12:27.251985" elapsed="2.165159"/>
+</kw>
+<doc>Laten we naar de BLOGPAGINA gaan en verifiëren dat we zijn ingelogd.</doc>
+<status status="PASS" start="2024-05-15T10:12:19.690488" elapsed="9.726656"/>
+</test>
+<doc>LearnAutomated Website Blog pagina demo test</doc>
+<status status="PASS" start="2024-05-15T10:12:19.466597" elapsed="9.950547"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="BlogPaginaTests">BlogPaginaTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
