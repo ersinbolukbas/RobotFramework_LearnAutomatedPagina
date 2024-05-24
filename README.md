@@ -1,3 +1,0 @@
-# RobotFramework_LearnAutomatedPagina
-Het automatiseren van eenvoudige tests van een webpagina met RobotFramework en Python.
-...

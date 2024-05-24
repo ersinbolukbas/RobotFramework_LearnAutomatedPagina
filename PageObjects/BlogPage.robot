@@ -6,6 +6,7 @@ Library   SeleniumLibrary
 
 
 
+
 *** Keywords ***
 Ga naar de BLOGPAGINA
     Click Element    xpath://a[contains(text(),'Blog')]
@@ -50,7 +51,7 @@ Contoleer of filter TOOLS
     ${element_count}=    Get Element Count    xpath:/html/body/main/section[2]/div/div/div[3]/div
     Log    We hebben totaal in blog pagina : ${element_count} onlinetraining
     IF    ${element_count} == ${ExpectedArtikelAantal}
-        Log To Console    Katalon button doet het niet meer
+        Fail    Katalon button doet het niet meer
     ELSE IF  ${element_count} <= 5
         Log To Console    Katalon button doet het wel
     END
@@ -68,8 +69,39 @@ Contoleer of filter TESTING
     IF    ${element_count} == ${ExpectedArtikelRegressie}
         Log To Console    Regression Test button doet het wel
     ELSE IF  ${element_count} == ${ExpectedArtikelAantal}
-        Log To Console    Regression Test button doet het niet meer.
+        Fail    Regression Test button doet het niet meer.
     END
+
+
+Contoleer of filter PROGRAMMING LANGUAGE
+    Click Element    ${ProgrammingLanguageFilter}
+    Sleep  0.5s
+    Click Element    ${Filter_ProgrammingLanguage}
+    Sleep  0.5s
+
+    # Controleer of uitslag van klikken.
+    Capture Page Screenshot
+    ${element_count}=    Get Element Count    xpath:/html/body/main/section[2]/div/div/div[3]/div
+    Log    We hebben totaal in blog pagina : ${element_count} onlinetraining
+    IF    ${element_count} == ${ExpectedArtikelPython}
+        Log To Console    Python button doet het wel
+    ELSE IF  ${element_count} == ${ExpectedArtikelAantal}
+        Fail    Python button doet het NIET meer.          
+    END
+
+
+Contoleer of filter SORT BY
+    Click Element    ${SortByFilter}
+    Sleep  0.5s
+    Click Element    ${Filter_SortByOldest}
+    Sleep  0.5s
+
+    # Controleer of uitslag van klikken.
+    Capture Page Screenshot
+
+
+
+
 
 
 
@@ -86,3 +118,8 @@ ${ToolsFilter_Katalon}   css:li[data-id=testing-katalon]
 ${ExpectedArtikelRegressie}  2
 ${TestingFilter}   xpath:(//p[@data-value='1'])[2]
 ${TestingFilter_Regressie}   css:li[data-id='testing-regression_test']
+${ProgrammingLanguageFilter}   xpath:(//p[@data-value='1'])[4]
+${Filter_ProgrammingLanguage}   css:li[data-id='theme-python']
+${ExpectedArtikelPython}  3
+${SortByFilter}   xpath:(//p[@data-value='1'])[5]
+${Filter_SortByOldest}   css:li[data-id='2']

@@ -36,3 +36,9 @@ Contoleer of filter TESTING
     BlogPage.Ga naar de BLOGPAGINA
     BlogPage.Contoleer of filter TESTING
     Sleep    1s
+
+Contoleer of filter PROGRAMMING LANGUAGE
+    BlogPage.Ga naar de BLOGPAGINA
+    BlogPage.Contoleer of filter PROGRAMMING LANGUAGE
+    Sleep  1s
+    

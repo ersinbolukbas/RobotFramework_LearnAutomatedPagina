@@ -1,6 +1,6 @@
 *** Settings ***
 Library   SeleniumLibrary
-Variables   Webelementen.py
+Variables   ../Resources/Webelementen.py
 
 
 
